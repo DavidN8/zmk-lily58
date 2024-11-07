@@ -25,7 +25,7 @@
 &kp TAB       &kp Q   &kp W   &kp E      &kp R     &kp T                          &kp Y   &kp U     &kp I      &kp O    &kp P     &kp MINUS
 &kp LEFT_ALT  &kp A   &kp S   &kp D      &kp F     &kp G                          &kp H   &kp J     &kp K      &kp L    &kp SEMI  &kp SQT
 &kp LSHFT     &kp Z   &kp X   &kp C      &kp V     &kp B   &kp LBKT    &kp RBKT   &kp N   &kp M     &kp COMMA  &kp DOT  &kp FSLH  &kp RSHFT
-                              &kp LCTRL  &kp LGUI  &mo 2   &kp RET     &kp SPACE  &mo 1   &kp BSPC  &mo 1
+                              &kp LCTRL  &kp LGUI  &mo 2   &kp RET     &kp SPACE  &mo 1   &kp BSPC  &mo 3
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
@@ -33,21 +33,31 @@
 
         navigation_layer {
             bindings = <
-&kp GRAVE    &trans  &trans  &trans  &trans  &trans                    &trans         &trans          &trans          &trans            &kp EQUAL          &trans
-&kp LA(TAB)  &trans  &trans  &trans  &trans  &trans                    &kp PAGE_UP    &trans          &kp UP_ARROW    &kp LEFT_BRACKET  &kp RIGHT_BRACKET  &trans
-&trans       &trans  &trans  &trans  &trans  &trans                    &kp PAGE_DOWN  &kp LEFT_ARROW  &kp DOWN_ARROW  &kp RIGHT_ARROW   &trans             &kp C_VOLUME_UP
-&trans       &trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans         &trans          &trans          &trans            &trans             &kp C_VOLUME_DOWN
-                             &trans  &trans  &trans  &trans    &trans  &trans         &trans          &trans
+&kp GRAVE     &trans  &trans  &trans  &trans  &trans                    &trans         &trans          &trans          &kp PLUS          &kp EQUAL          &kp BACKSLASH
+&kp LA(TAB)   &trans  &trans  &trans  &trans  &trans                    &kp PAGE_UP    &trans          &kp UP_ARROW    &kp LEFT_BRACKET  &kp RIGHT_BRACKET  &kp PIPE
+&trans        &trans  &trans  &trans  &trans  &trans                    &kp PAGE_DOWN  &kp LEFT_ARROW  &kp DOWN_ARROW  &kp RIGHT_ARROW   &trans             &trans
+&kp CAPSLOCK  &trans  &trans  &trans  &trans  &trans  &trans    &trans  &kp GRAVE      &kp TILDE       &trans          &trans            &trans             &kp CAPSLOCK
+                              &trans  &trans  &trans  &trans    &trans  &trans         &trans          &trans
             >;
         };
 
-        layer_4 {
+        desktop_nav {
             bindings = <
-&bt BT_CLR  &bt BT_SEL 0        &bt BT_SEL 1        &bt BT_SEL 2         &trans  &trans                    &trans  &trans         &trans         &trans  &trans  &trans
-&trans      &trans              &trans              &trans               &trans  &trans                    &trans  &kp LC(LA(U))  &kp LA(LC(I))  &trans  &trans  &trans
-&trans      &trans              &kp LC(UP_ARROW)    &trans               &trans  &trans                    &trans  &kp LA(LC(J))  &kp LA(LC(K))  &trans  &trans  &trans
-&trans      &kp LC(LEFT_ARROW)  &kp LC(DOWN_ARROW)  &kp LC(RIGHT_ARROW)  &trans  &trans  &trans    &trans  &trans  &trans         &trans         &trans  &trans  &trans
-                                                    &trans               &trans  &trans  &trans    &trans  &trans  &trans         &trans
+&bt BT_CLR  &bt BT_SEL 0        &bt BT_SEL 1        &bt BT_SEL 2         &trans      &trans                               &trans  &trans         &trans         &trans  &trans  &trans
+&trans      &trans              &trans              &trans               &trans      &trans                               &trans  &kp LC(LA(U))  &kp LA(LC(I))  &trans  &trans  &trans
+&trans      &trans              &kp LC(UP_ARROW)    &trans               &trans      &kp C_VOLUME_UP                      &trans  &kp LA(LC(J))  &kp LA(LC(K))  &trans  &trans  &trans
+&trans      &kp LC(LEFT_ARROW)  &kp LC(DOWN_ARROW)  &kp LC(RIGHT_ARROW)  &kp K_MUTE  &kp C_VOLUME_DOWN  &trans    &trans  &trans  &trans         &trans         &trans  &trans  &trans
+                                                    &trans               &trans      &trans             &trans    &trans  &trans  &trans         &trans
+            >;
+        };
+
+        numpad_ish {
+            bindings = <
+&trans  &trans  &trans  &trans  &trans  &trans                    &trans  &trans        &trans        &trans        &kp MINUS        &trans
+&trans  &trans  &trans  &trans  &trans  &trans                    &trans  &kp NUMBER_4  &kp N5        &kp NUMBER_6  &kp PLUS         &trans
+&trans  &trans  &trans  &trans  &trans  &trans                    &trans  &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &kp KP_MULTIPLY  &trans
+&trans  &trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans        &kp NUMBER_0  &trans        &kp ENTER        &trans
+                        &trans  &trans  &trans  &trans    &trans  &trans  &trans        &trans
             >;
         };
     };
